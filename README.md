@@ -1,4 +1,4 @@
-ï»¿# 100 Days of Multi-Cloud Mastery (AWS + Azure + GCP)
+# 100 Days of Multi-Cloud Mastery (AWS + Azure + GCP)
 
 Project-First Roadmap for the YouTube Series
 
@@ -21,10 +21,10 @@ This is a project-first roadmap split into five phases. Each day delivers a smal
 
 ---
 
-## Phase 1 â€” Multi-Cloud Foundations (Day 1â€“20)
+## Phase 1 — Multi-Cloud Foundations (Day 1–20)
 Goal: Build identical environments in all three clouds using core services.
 
-### Week 1: Identity + Networking (Day 1â€“7)
+### Week 1: Identity + Networking (Day 1–7)
 Project Goal: Build secure identity + network foundations in each cloud.
 
 Day | Project Task | Mini Theory
@@ -37,7 +37,7 @@ Day | Project Task | Mini Theory
 6 | Create GCP VPC + firewall rules | Implicit networks, global VPC
 7 | Compare 3 cloud networking models | Multi-cloud network architecture
 
-### Week 2: Compute + Storage (Day 8â€“14)
+### Week 2: Compute + Storage (Day 8–14)
 Project Goal: Deploy the same static blog on EC2, Azure VM, GCE.
 
 Day | Task | Theory
@@ -50,7 +50,7 @@ Day | Task | Theory
 13 | Create GCP Cloud Storage site | IAM vs ACL
 14 | Compare all compute + storage services | Service mapping guide
 
-### Week 3: Load Balancing + DNS (Day 15â€“20)
+### Week 3: Load Balancing + DNS (Day 15–20)
 Main Task: Deploy load balancers in all clouds.
 
 Day | Task | Theory
@@ -64,10 +64,10 @@ Day | Task | Theory
 
 ---
 
-## Phase 2 â€” Multi-Cloud DevOps (Day 21â€“45)
+## Phase 2 — Multi-Cloud DevOps (Day 21–45)
 Main Project: CI/CD pipelines + containers + monitoring across clouds
 
-### Week 4: Containers (Day 21â€“27)
+### Week 4: Containers (Day 21–27)
 Project Goal: Build + push Docker app to 3 cloud registries.
 
 Day | Task | Theory
@@ -80,7 +80,7 @@ Day | Task | Theory
 26 | Deploy to Azure Container Apps | Serverless containers
 27 | Deploy to GCP Cloud Run | Auto-scaling
 
-### Week 5: Kubernetes (Day 28â€“34)
+### Week 5: Kubernetes (Day 28–34)
 Project Goal: Deploy app on EKS + AKS + GKE.
 
 Day | Task | Theory
@@ -93,7 +93,7 @@ Day | Task | Theory
 33 | Ingress controllers | Nginx ingress
 34 | Compare managed Kubernetes | Pricing + scaling
 
-### Week 6: CI/CD (Day 35â€“45)
+### Week 6: CI/CD (Day 35–45)
 Project Goal: Build a fully automated multi-cloud CI/CD pipeline.
 
 Day | Task | Theory
@@ -105,11 +105,11 @@ Day | Task | Theory
 39 | AWS CodePipeline | Multi-stage pipelines
 40 | Azure DevOps pipeline | Release management
 41 | GCP Cloud Build | Docker build triggers
-42â€“45 | Create unified pipeline  deploy to all 3 clouds | GitOps
+42–45 | Create unified pipeline  deploy to all 3 clouds | GitOps
 
 ---
 
-## Phase 3 â€” Multi-Cloud Data (Day 46â€“70)
+## Phase 3 — Multi-Cloud Data (Day 46–70)
 Project: Data Pipeline across AWS + Azure + GCP
 
 Day | Project Task
@@ -124,11 +124,11 @@ Day | Project Task
 53 | Build dashboards in QuickSight
 54 | Build dashboards in PowerBI
 55 | Build dashboards in Looker Studio
-56â€“60 | Final unified data pipeline + reporting project
+56–60 | Final unified data pipeline + reporting project
 
 ---
 
-## Phase 4 â€” Multi-Cloud Automation + IaC (Day 71â€“85)
+## Phase 4 — Multi-Cloud Automation + IaC (Day 71–85)
 Project: Deploy a full 3-cloud architecture using IaC
 
 Day | Project Task | Theory
@@ -141,11 +141,11 @@ Day | Project Task | Theory
 76 | Deploy load balancers | Outputs
 77 | Deploy Kubernetes clusters | Provisioners
 78 | Multi-cloud DNS automation | Multi-env patterns
-79â€“85 | Full Terraform project  All 3 clouds automated | 
+79–85 | Full Terraform project  All 3 clouds automated | 
 
 ---
 
-## Phase 5 â€” Multi-Cloud Capstone (Day 86â€“100)
+## Phase 5 — Multi-Cloud Capstone (Day 86–100)
 Final Project: Multi-Cloud SaaS Application with Global Failover
 
 Day | Task
@@ -170,8 +170,9 @@ Day | Task
 
 ## How to use this repo
 - `day-01-aws-iam` contains the Day 1 tutorial for IAM in AWS (CloudFormation, scripts, article)
-- Each day will have a corresponding folder that contains code, scripts, and a short article or video link
+- Each day will have a corresponding folder that contains code, scripts, and a short article or video link\n- day-02-azure-rbac contains the Day 2 tutorial for Azure Entra ID and RBAC (scripts, article, resources, and video link)
 
 ---
 
 If you'd like I can convert this roadmap into a structured checklist, auto-generate a folder skeleton for all 100 days (with templates), or add an SVG timeline.
+
