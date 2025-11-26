@@ -1,0 +1,96 @@
+﻿AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Day 01 - AWS IAM Setup: Developers group, IAM user, EC2 role with S3 ReadOnly access'
+
+Parameters:
+  CreateLoginProfile:
+    Type: String
+    AllowedValues:
+      - Yes
+      - No
+    Default: No
+    Description: 'Whether to set a console password for the user (Not recommended in production)'
+
+  UserPassword:
+    Type: String
+    NoEcho: true
+    Default: ''
+    Description: 'Password for the IAM user when CreateLoginProfile=Yes'
+
+Resources:
+  DevelopersGroup:
+    Type: AWS::IAM::Group
+    Properties:
+      GroupName: Developers
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+
+  JohnDeveloperUser:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: john.developer
+      Path: '/'
+      LoginProfile:
+        Fn::If:
+          - IsCreateLoginProfile
+          - Password: !Ref UserPassword
+            PasswordResetRequired: true
+          - Ref: 'AWS::NoValue'
+
+  AddUserToGroup:
+    Type: AWS::IAM::UserToGroupAddition
+    Properties:
+      GroupName: !Ref DevelopersGroup
+      Users:
+        - !Ref JohnDeveloperUser
+
+  JohnDeveloperAccessKey:
+    Type: AWS::IAM::AccessKey
+    Properties:
+      UserName: !Ref JohnDeveloperUser
+
+  EC2S3ReadRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: EC2-S3ReadRole
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ec2.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+
+  EC2S3ReadInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      InstanceProfileName: EC2S3ReadRoleInstanceProfile
+      Roles:
+        - !Ref EC2S3ReadRole
+
+Conditions:
+  IsCreateLoginProfile: !Equals [!Ref CreateLoginProfile, 'Yes']
+
+Outputs:
+  GroupName:
+    Description: 'Developers group name'
+    Value: !Ref DevelopersGroup
+
+  UserName:
+    Description: 'IAM user created'
+    Value: !Ref JohnDeveloperUser
+
+  AccessKeyId:
+    Description: 'Access Key ID for the created user (secret access key is only visible at creation time in stack or console)'
+    Value: !Ref JohnDeveloperAccessKey
+
+  RoleName:
+    Description: 'EC2 assume-role name created'
+    Value: !Ref EC2S3ReadRole
+
+  InstanceProfileName:
+    Description: 'EC2 instance profile to attach to instances'
+    Value: !Ref EC2S3ReadInstanceProfile
