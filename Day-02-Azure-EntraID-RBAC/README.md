@@ -69,9 +69,10 @@ Lower scopes override higher scopes — giving you precise access control.
 
 ## 🖼️ Architecture Diagram
 
-![Azure Entra ID + RBAC Diagram](./assets/entraid-diagram.png)
 
----
+
+---<img width="1174" height="790" alt="Screenshot 2025-11-27 200636" src="https://github.com/user-attachments/assets/94ea618d-1d5c-437d-b44a-e21f05d35be9" />
+
 
 ## 🛠️ Hands-On Project Steps
 
@@ -148,13 +149,6 @@ This is exactly what real Azure engineers do daily. 🚀
 
 ---
 
-## 📝 Quiz (Optional)
-1️⃣ Difference between Azure RBAC and AWS IAM?  
-2️⃣ What is the RBAC scope hierarchy?  
-3️⃣ Why should you assign roles to groups, not users?  
-4️⃣ What does the Contributor role allow?  
-
----
 
 ## 💡 Homework
 Try creating your own **Managed Identity** and test assigning it to a VM.
@@ -168,5 +162,5 @@ Try creating your own **Managed Identity** and test assigning it to a VM.
 
 ## 📂 Resources
 - 🔗 [GitHub Repository (Full Series)](YOUR_REPO_LINK)
-- 🌐 [LinkedIn Post](YOUR_LINKEDIN_LINK)
+- 🌐 [LinkedIn Post]([https://www.linkedin.com/in/venkatasrihari/])
 - 💬 [Telegram Community](YOUR_TELEGRAM_LINK)
