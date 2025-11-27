@@ -161,6 +161,6 @@ Try creating your own **Managed Identity** and test assigning it to a VM.
 ---
 
 ## 📂 Resources
-- 🔗 [GitHub Repository (Full Series)](YOUR_REPO_LINK)
-- 🌐 [LinkedIn Post]([https://www.linkedin.com/in/venkatasrihari/])
-- 💬 [Telegram Community](YOUR_TELEGRAM_LINK)
+- 🔗  GitHub Repo (this project): https://github.com/Consultantsrihari/100DaysOfMultiCloud
+- 🌐 LinkedIn: https://www.linkedin.com/in/venkatasrihari/
+- 💬Telegram: https://t.me/+aUHeeIHnADJjZmE1
