@@ -1,10 +1,10 @@
 # 🔐 Day 3 — MFA + Security Basics (AWS vs Azure Conditional Access)
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch%20on-YouTube-red?logo=youtube)](YOUR_YOUTUBE_LINK)
-![AWS](https://img.shields.io/badge/Platform-AWS-orange)
-![Azure](https://img.shields.io/badge/Platform-Azure-blue)
-![Hands-On]([https://img.shields.io/badge/Project-Hands--On-green](https://techcareerhubs.com/mfa-security-basics-aws-vs-azure-conditional-access/))
-![Progress](https://img.shields.io/badge/Day-3-yellow)
+- 🔗  GitHub Repo (this project): https://github.com/Consultantsrihari/100DaysOfMultiCloud
+- Youtube Video: https://youtu.be/lujj_E4Cz0E
+- 🌐 LinkedIn: https://www.linkedin.com/in/venkatasrihari/
+- 💬Telegram: https://t.me/+aUHeeIHnADJjZmE1
+- Complete Blog: https://techcareerhubs.com/mfa-security-basics-aws-vs-azure-conditional-access/
 
 ---
 
@@ -186,19 +186,19 @@ It lets organizations apply **conditional logic** for authentication — determi
 ---
 
 ## 📺 Watch the Full Tutorial
-▶️ [YouTube Video — Day 3: MFA + Security Basics (AWS vs Azure Conditional Access)](YOUR_YOUTUBE_LINK)
+▶️ [YouTube Video — Day 3: MFA + Security Basics (AWS vs Azure Conditional Access)](https://youtu.be/lujj_E4Cz0E)
 
 ---
 
 ## 📂 Resources
-- 💻 [GitHub Repository (100 Days of Multi-Cloud)](YOUR_GITHUB_REPO_LINK)  
-- 💬 [Join Telegram Community](YOUR_TELEGRAM_LINK)  
-- 🌐 [LinkedIn Post](YOUR_LINKEDIN_LINK)  
+- 💻 [GitHub Repository (100 Days of Multi-Cloud)](https://github.com/Consultantsrihari/100DaysOfMultiCloud)  
+- 💬 [Join Telegram Community](https://t.me/+aUHeeIHnADJjZmE1)  
+- 🌐 [LinkedIn Post](https://www.linkedin.com/in/venkatasrihari/)  
 
 ---
 
 ## 🧭 Navigation
-🔙 [Previous: Day 2 — Azure Entra ID + RBAC](../Day-02-Azure-EntraID-RBAC/README.md)  
+🔙 [Previous: Day 2 — Azure Entra ID + RBAC](https://github.com/Consultantsrihari/100DaysOfMultiCloud/blob/main/Day-02-Azure-EntraID-RBAC/README.md)  
 🔜 [Next: Day 4 — Identity Architecture (AWS + Azure)](../upcoming/Day-04-Identity-Architecture/README.md)
 
 ---
