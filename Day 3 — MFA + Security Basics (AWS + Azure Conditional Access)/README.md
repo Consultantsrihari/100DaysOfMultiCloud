@@ -76,3 +76,134 @@ It lets organizations apply **conditional logic** for authentication — determi
 
 ## 🖼️ Architecture Diagram
 
+<img width="2816" height="1536" alt="Gemini_Generated_Image_j8c53vj8c53vj8c5" src="https://github.com/user-attachments/assets/4f042025-9b2d-4458-b81d-4c869d0af61d" />
+
+
+🧩 *This applies to both AWS (MFA) and Azure (Conditional Access).*
+
+---
+
+## 🛠️ Hands-On Project (Step-by-Step)
+
+### 🌩️ AWS — Enable MFA for IAM User
+
+1️⃣ **Login** → AWS Console → IAM  
+2️⃣ Go to **Users → Select your user**  
+3️⃣ Open **Security Credentials** tab  
+4️⃣ Under *MFA Device*, click **Assign MFA**  
+5️⃣ Choose **Authenticator App**  
+6️⃣ Scan QR Code using **Google Authenticator**  
+7️⃣ Enter two consecutive verification codes  
+8️⃣ Click **Activate MFA**
+
+✅ Your IAM user is now MFA protected.  
+
+---
+
+### 🧩 Enforce MFA for All Users (Password Policy)
+
+1️⃣ Go to **IAM → Account Settings**  
+2️⃣ Enable:
+   - Require MFA  
+   - Strong passwords  
+   - Minimum 8 characters  
+   - Rotate passwords every 90 days  
+3️⃣ Save the policy  
+
+💬 *This ensures every IAM user follows your organization’s security standards.*
+
+---
+
+### ☁️ Azure — Setup Conditional Access Policy
+
+1️⃣ Open **Azure Portal → Microsoft Entra ID**  
+2️⃣ Navigate to **Security → Conditional Access**  
+3️⃣ Click **New Policy → Create new**  
+4️⃣ Name the policy: `Require MFA for all users`  
+5️⃣ Conditions:
+   - Users: All users  
+   - Cloud apps: All apps  
+   - Locations: Exclude trusted IPs  
+6️⃣ Grant controls: **Require MFA**  
+7️⃣ Enable → **ON**
+
+✅ *This policy forces MFA whenever anyone logs into Azure.*
+
+---
+
+## ⚖️ AWS vs Azure — MFA Comparison
+
+| Feature | AWS MFA | Azure Conditional Access |
+|----------|----------|--------------------------|
+| Basic MFA | ✔ Yes | ✔ Yes |
+| Conditional Access | ❌ | ✔ |
+| Risk-based Login | ❌ | ✔ |
+| Device Compliance | ❌ | ✔ |
+| Location-based Access | Partial | ✔ |
+| Security Strength | Strong | Smarter |
+
+💬 *AWS = Strong MFA | Azure = Smart, Context-Aware MFA*
+
+---
+
+## 🧠 Real-World Examples
+
+| Scenario | AWS | Azure |
+|-----------|-----|-------|
+| Login from new country | MFA challenge | MFA required by policy |
+| Non-compliant device | MFA only | Blocked by Conditional Access |
+| Guest login | MFA optional | Limited access with conditions |
+| Root user | Always MFA | Global admin + Conditional rules |
+
+---
+
+## 🧩 Best Practices
+
+✔ Enable MFA for *every* root and IAM user  
+✔ Use **Authenticator apps**, not SMS  
+✔ Review sign-in logs regularly  
+✔ Combine MFA with **Conditional Access**  
+✔ Educate users on phishing & MFA fatigue  
+
+---
+
+## 📝 Quiz (Test Yourself)
+
+1️⃣ What is MFA and why is it critical in cloud environments?  
+2️⃣ How is Azure Conditional Access more advanced than AWS MFA?  
+3️⃣ Should the root user in AWS have MFA enabled?  
+4️⃣ Why is SMS-based MFA less secure?  
+
+📘 [View Full Interview Q&A → Click Here](./Interview-Questions.md)
+
+---
+
+## 💡 Homework
+
+✅ Enable MFA for all AWS IAM users  
+✅ Create a Conditional Access policy in Azure  
+✅ Test login from multiple devices or locations  
+✅ Share your screenshot & comment **#Day3Done**  
+
+---
+
+## 📺 Watch the Full Tutorial
+▶️ [YouTube Video — Day 3: MFA + Security Basics (AWS vs Azure Conditional Access)](YOUR_YOUTUBE_LINK)
+
+---
+
+## 📂 Resources
+- 💻 [GitHub Repository (100 Days of Multi-Cloud)](YOUR_GITHUB_REPO_LINK)  
+- 💬 [Join Telegram Community](YOUR_TELEGRAM_LINK)  
+- 🌐 [LinkedIn Post](YOUR_LINKEDIN_LINK)  
+
+---
+
+## 🧭 Navigation
+🔙 [Previous: Day 2 — Azure Entra ID + RBAC](../Day-02-Azure-EntraID-RBAC/README.md)  
+🔜 [Next: Day 4 — Identity Architecture (AWS + Azure)](../upcoming/Day-04-Identity-Architecture/README.md)
+
+---
+
+> 🧠 *Part of the 100 Days of Multi-Cloud Series — Learn AWS, Azure with real-world, hands-on projects and practical cloud engineering scenarios.*
+
