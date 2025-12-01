@@ -156,7 +156,7 @@ Try creating your own **Managed Identity** and test assigning it to a VM.
 ---
 
 ## 📺 Watch the Tutorial
-▶️ [YouTube Video — Day 2: Azure Entra ID + RBAC](YOUR_YOUTUBE_LINK)
+▶️ [YouTube Video — Day 2: Azure Entra ID + RBAC](https://youtu.be/ZZrYfASdcMI?si=3bU93qaSYOpZd7uL)
 
 ---
 
