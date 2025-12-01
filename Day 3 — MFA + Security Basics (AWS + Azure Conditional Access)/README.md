@@ -174,8 +174,6 @@ It lets organizations apply **conditional logic** for authentication — determi
 3️⃣ Should the root user in AWS have MFA enabled?  
 4️⃣ Why is SMS-based MFA less secure?  
 
-📘 [View Full Interview Q&A → Click Here](./Interview-Questions.md)
-
 ---
 
 ## 💡 Homework
