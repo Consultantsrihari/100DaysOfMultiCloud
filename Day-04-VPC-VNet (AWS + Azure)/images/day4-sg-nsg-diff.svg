@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="250">
+  <rect x="10" y="10" width="880" height="230" rx="12" fill="#fff7ed" stroke="#ffedd5"/>
+  <text x="30" y="40" font-size="16" fill="#92400e">Security Groups vs NSGs vs NACLs</text>
+  <rect x="30" y="70" width="260" height="140" fill="#fff" stroke="#cbd5e1" rx="6"/>
+  <text x="45" y="95" font-size="12" fill="#92400e">AWS Security Group (Instance-level, stateful)</text>
+  <text x="45" y="115" font-size="12" fill="#475569">- Attaches to ENI/NIC</text>
+  <text x="45" y="130" font-size="12" fill="#475569">- Stateful: return traffic allowed</text>
+
+  <rect x="320" y="70" width="260" height="140" fill="#fff" stroke="#cbd5e1" rx="6"/>
+  <text x="335" y="95" font-size="12" fill="#92400e">Azure NSG (Subnet/Interface, stateless)</text>
+  <text x="335" y="115" font-size="12" fill="#475569">- Scope: Subnet + NIC</text>
+  <text x="335" y="130" font-size="12" fill="#475569">- Stateless for certain flows; needs return rules</text>
+
+  <rect x="610" y="70" width="260" height="140" fill="#fff" stroke="#cbd5e1" rx="6"/>
+  <text x="625" y="95" font-size="12" fill="#92400e">AWS NACL (Subnet-level, stateless)</text>
+  <text x="625" y="115" font-size="12" fill="#475569">- Attach to subnet</text>
+  <text x="625" y="130" font-size="12" fill="#475569">- Stateless: explicit allow/deny rules</text>
+</svg>

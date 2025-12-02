@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420">
+  <rect x="10" y="10" width="880" height="400" rx="12" fill="#fef3c7" stroke="#fde68a"/>
+  <text x="30" y="40" font-size="18" fill="#92400e">Hub & Spoke (Transit)</text>
+  
+  <rect x="360" y="70" width="180" height="120" fill="#fff" stroke="#f59e0b" rx="6"/>
+  <text x="395" y="95" font-size="14" fill="#92400e">Hub VPC/VNet</text>
+  <text x="370" y="115" font-size="12" fill="#92400e">- NAT Gateway</text>
+  <text x="370" y="130" font-size="12" fill="#92400e">- Logging & Firewall</text>
+
+  <rect x="80" y="220" width="200" height="120" fill="#fff" stroke="#cbd5e1" rx="6"/>
+  <text x="120" y="245" font-size="14" fill="#0f172a">Spoke A</text>
+  <text x="100" y="265" font-size="12" fill="#475569">(Dev / Test)</text>
+
+  <rect x="360" y="220" width="200" height="120" fill="#fff" stroke="#cbd5e1" rx="6"/>
+  <text x="420" y="245" font-size="14" fill="#0f172a">Spoke B</text>
+  <text x="390" y="265" font-size="12" fill="#475569">(Apps)</text>
+
+  <rect x="640" y="220" width="200" height="120" fill="#fff" stroke="#cbd5e1" rx="6"/>
+  <text x="690" y="245" font-size="14" fill="#0f172a">Spoke C</text>
+  <text x="665" y="265" font-size="12" fill="#475569">(Prod)</text>
+
+  <line x1="240" y1="220" x2="360" y2="130" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6"/>
+  <line x1="460" y1="220" x2="460" y2="190" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6"/>
+  <line x1="640" y1="220" x2="520" y2="130" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6"/>
+  <text x="340" y="180" font-size="12" fill="#92400e">Transit Gateway / Virtual WAN</text>
+</svg>

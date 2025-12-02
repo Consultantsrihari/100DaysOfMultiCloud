@@ -199,7 +199,7 @@ It lets organizations apply **conditional logic** for authentication — determi
 
 ## 🧭 Navigation
 🔙 [Previous: Day 2 — Azure Entra ID + RBAC](https://github.com/Consultantsrihari/100DaysOfMultiCloud/blob/main/Day-02-Azure-EntraID-RBAC/README.md)  
-🔜 [Next: Day 4 — Identity Architecture (AWS + Azure)](../upcoming/Day-04-Identity-Architecture/README.md)
+🔜 [Next: Day 4 — VPC (AWS) & VNet (Azure)](../Day-04-VPC-VNet (AWS + Azure)/README.md)
 
 ---
 

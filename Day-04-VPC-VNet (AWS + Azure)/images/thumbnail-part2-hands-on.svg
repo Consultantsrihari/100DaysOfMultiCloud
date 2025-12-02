@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720">
+  <rect width="100%" height="100%" fill="#042f2e"/>
+  <text x="60" y="120" font-size="46" fill="#a7f3d0">Day 4 — VPC / VNet</text>
+  <text x="60" y="180" font-size="30" fill="#a7f3d0">Part 2: Hands-on Project</text>
+  <rect x="60" y="220" width="400" height="220" fill="#06b6d4" rx="10"/>
+  <text x="80" y="260" font-size="20" fill="#042f2e">Create VPC, subnets, NAT, peering</text>
+  <text x="80" y="285" font-size="18" fill="#042f2e">CloudFormation & Azure CLI</text>
+</svg>

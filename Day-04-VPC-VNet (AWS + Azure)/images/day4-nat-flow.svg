@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="240">
+  <rect x="10" y="10" width="880" height="220" rx="12" fill="#ecfeff" stroke="#cffafe"/>
+  <text x="30" y="40" font-size="16" fill="#064e3b">NAT Flow</text>
+
+  <rect x="40" y="70" width="200" height="70" fill="#fff" stroke="#cbd5e1" rx="6"/>
+  <text x="80" y="95" font-size="14" fill="#064e3b">Private Instance</text>
+  <rect x="360" y="70" width="240" height="70" fill="#fff" stroke="#cbd5e1" rx="6"/>
+  <text x="430" y="95" font-size="14" fill="#064e3b">NAT Gateway (EIP)</text>
+  <rect x="740" y="70" width="120" height="70" fill="#fff" stroke="#cbd5e1" rx="6"/>
+  <text x="760" y="95" font-size="14" fill="#064e3b">Internet</text>
+  <line x1="240" y1="105" x2="360" y2="105" stroke="#064e3b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="600" y1="105" x2="740" y2="105" stroke="#064e3b" stroke-width="2" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#064e3b" />
+    </marker>
+  </defs>
+  <text x="270" y="120" font-size="12" fill="#0b5a4c">Source NAT: Private IP -> NAT EIP</text>
+</svg>

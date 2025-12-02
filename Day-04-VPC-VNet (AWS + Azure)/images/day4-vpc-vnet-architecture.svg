@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400">
+  <rect x="10" y="10" width="880" height="380" rx="12" fill="#f7fafc" stroke="#e2e8f0"/>
+  <text x="30" y="40" font-size="18" fill="#0f172a">VPC / VNet: 10.0.0.0/16</text>
+  <rect x="30" y="60" width="380" height="120" fill="#fff" stroke="#cbd5e1" rx="6"/>
+  <text x="50" y="85" font-size="14" fill="#0f172a">Public Subnet (10.0.1.0/24)</text>
+  <text x="50" y="105" font-size="12" fill="#475569">- Web Server (Public IP)</text>
+  <text x="50" y="125" font-size="12" fill="#475569">- Bastion Host</text>
+  <rect x="450" y="60" width="380" height="120" fill="#fff" stroke="#cbd5e1" rx="6"/>
+  <text x="470" y="85" font-size="14" fill="#0f172a">Private Subnet (10.0.2.0/24)</text>
+  <text x="470" y="105" font-size="12" fill="#475569">- App Server (No Public IP)</text>
+  <text x="470" y="125" font-size="12" fill="#475569">- DB (Private)</text>
+  <rect x="450" y="200" width="380" height="80" fill="#fff" stroke="#cbd5e1" rx="6"/>
+  <text x="470" y="225" font-size="14" fill="#0f172a">NAT Gateway (Public Subnet)</text>
+  <rect x="30" y="200" width="380" height="80" fill="#fff" stroke="#cbd5e1" rx="6"/>
+  <text x="50" y="225" font-size="14" fill="#0f172a">Internet Gateway</text>
+  <line x1="420" y1="130" x2="450" y2="130" stroke="#94a3b8" stroke-width="2"/>
+  <text x="370" y="140" font-size="12" fill="#0f172a">Route 0.0.0.0/0 -> NAT</text>
+  <line x1="210" y1="180" x2="210" y2="200" stroke="#94a3b8" stroke-width="2"/>
+  <text x="170" y="190" font-size="12" fill="#0f172a">Route 0.0.0.0/0 -> IGW</text>
+  <circle cx="620" cy="260" r="8" fill="#f97316"/>
+  <text x="635" y="265" font-size="12" fill="#0f172a">NAT EIP</text>
+</svg>
