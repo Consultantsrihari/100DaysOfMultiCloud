@@ -1,0 +1,184 @@
+# 🚀 Day 5 – AWS VPC 2-Tier Architecture | #100DaysOfMultiCloud
+
+Welcome to Day 5 of my Multi-Cloud series!  
+In this project, I’ve built a **real-world 2-tier network architecture** in **AWS** — from scratch — just like real companies do in production.
+
+By following this, you'll understand:
+- How to build a custom AWS VPC
+- How subnetting, routing, and NAT work
+- How to securely deploy frontend & backend EC2 instances
+
+---
+
+## 📐 Architecture Overview
+
+VPC: 10.0.0.0/16
+├── Public Subnet (10.0.1.0/24)
+│ └── EC2: frontend (Apache)
+│ └── Internet Gateway
+├── Private Subnet (10.0.2.0/24)
+└── EC2: backend (Flask)
+└── NAT Gateway → Internet (Outbound-only)
+
+
+---
+
+## 🛠️ AWS Services Used
+
+- ✅ VPC (Virtual Private Cloud)
+- ✅ Public + Private Subnets
+- ✅ Internet Gateway (IGW)
+- ✅ NAT Gateway + Elastic IP
+- ✅ Route Tables (public & private)
+- ✅ Security Groups
+- ✅ EC2 Instances (Frontend + Backend)
+- ✅ User Data scripts
+- ✅ Testing via curl + SSH
+
+---
+
+## 🧭 Step-by-Step Setup
+
+### 🔹 VPC
+- CIDR: `10.0.0.0/16`
+- Name: `day4-vpc`
+
+### 🔹 Subnets
+- `public-subnet-a` → `10.0.1.0/24` (Enable auto-assign Public IP)
+- `private-subnet-a` → `10.0.2.0/24`
+
+### 🔹 Internet Gateway
+- Name: `day4-igw`
+- Attach to VPC
+
+### 🔹 Elastic IP
+- Tag: `day4-nat-eip`
+
+### 🔹 NAT Gateway
+- Name: `day4-nat-gw`
+- Subnet: `public-subnet-a`
+- EIP: `day4-nat-eip`
+
+---
+
+## 🌐 Route Tables
+
+### Public RT
+- Name: `public-rt`
+- Route: `0.0.0.0/0 → IGW`
+- Associate with: `public-subnet-a`
+
+### Private RT
+- Name: `private-rt`
+- Route: `0.0.0.0/0 → NAT Gateway`
+- Associate with: `private-subnet-a`
+
+---
+
+## 🔐 Security Groups
+
+### `frontend-sg`
+- Inbound:
+  - HTTP (80) → `0.0.0.0/0`
+  - SSH (22) → `your-ip/32`
+- Outbound: All traffic allowed
+
+### `backend-sg`
+- Inbound:
+  - TCP (8080) → Source: `frontend-sg`
+- Outbound: All traffic allowed
+
+---
+
+## 💻 EC2 Instances
+
+### Frontend EC2 (Apache in public subnet)
+- Name: `frontend-ec2`
+- Subnet: `public-subnet-a`
+- SG: `frontend-sg`
+- Public IP: Enabled
+
+**User Data Script:**
+```bash
+#!/bin/bash
+yum update -y || dnf update -y
+yum install -y httpd || dnf install -y httpd
+echo "AWS Frontend Server - Day 4 Multi-Cloud" > /var/www/html/index.html
+systemctl enable httpd
+systemctl start httpd
+
+
+---
+Backend EC2 (Flask in private subnet)
+
+Name: backend-ec2
+
+Subnet: private-subnet-a
+
+SG: backend-sg
+
+Public IP: Disabled
+
+User Data Script:
+#!/bin/bash
+dnf update -y || yum update -y
+dnf install -y python3 || yum install -y python3
+pip3 install flask || python3 -m pip install flask
+cat << 'EOF' > /home/ec2-user/app.py
+from flask import Flask
+app = Flask(__name__)
+@app.route("/")
+def home():
+    return "Hello from AWS Backend in Private Subnet"
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080)
+EOF
+nohup python3 /home/ec2-user/app.py &
+
+---
+
+Testing
+✅ Frontend Access
+
+Open browser →
+http://<frontend-public-ip>
+ex: ssh -i day5-key.pem ec2-user@<frontend-public-ip>
+Expected Output: “AWS Frontend Server - Day 4 Multi-Cloud”
+
+✅ SSH into Frontend 
+From frontend EC2:
+curl http://<backend-private-ip>:8080
+Expected Output: “Hello from AWS Backend in Private Subnet”
+
+✅Backend Outbound (via NAT)
+
+SSH into backend from frontend, then:
+curl ifconfig.me
+Expected: Public IP of NAT Gatewa
+
+---
+
+🎓 Key Concepts Reinforced
+
+✅ CIDR Planning & Subnetting
+
+✅ IGW vs NAT Gateway usage
+
+✅ Route Table separation (public vs private)
+
+✅ Least privilege access with Security Groups
+
+✅ EC2 automation with User Data scripts
+
+---
+
+🌍 Connect With Me
+
+🌐 Website: Techcareerhubs.com
+
+🔗 LinkedIn: Venkata Srihari
+
+💻 GitHub: Consultantsrihari
+
+📺 YouTube: TechCareerHubs
+
