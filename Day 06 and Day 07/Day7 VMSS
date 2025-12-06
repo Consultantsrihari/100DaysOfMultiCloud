@@ -1,0 +1,60 @@
+What is VMSS?
+
+Group of identical VMs managed by Azure with auto-scaling and load balancing.
+
+Benefits:
+Auto-scale, Auto-heal, Load Balancer, High Availability, Automated Deployment
+
+🔹 Architecture
+Internet → Load Balancer → VMSS (2+ VMs with NGINX)
+
+🔹 Hands-On: Deploy VM Scale Set
+
+Create VMSS
+
+Resource Group: day6-rg, Name: day7-vmss
+
+Image: Ubuntu 22.04, Size: B1s, SSH Auth, User: azureuser
+
+Auto Scaling
+
+Initial: 2, Min: 2, Max: 5
+
+Scale out: CPU > 60%, Scale in: CPU < 40%
+
+Networking
+
+VNet: day6-vnet, Subnet: web-subnet
+
+Load Balancer: Public, Name: day7-lb, IP: day7-lb-ip
+
+Inbound: Port 80 (HTTP)
+
+Custom Script
+In "Custom data":
+
+#cloud-config
+package_update: true
+packages:
+  - nginx
+runcmd:
+  - echo "Day 7 Azure VM Scale Set - Served by $(hostname)" | sudo tee /var/www/html/index.html
+  - sudo systemctl restart nginx
+
+
+Deploy
+Click "Review + Create" → Create
+
+Test
+Visit http://<lb-public-ip>
+Refresh to see different VM responses.
+
+Trigger Scaling (Optional)
+
+sudo apt install stress -y
+stress --cpu 4 --timeout 300 &
+
+✅ Summary
+Day	Highlights
+6	VM basics, NGINX manual setup, networking
+7	VMSS with autoscaling, Load Balancer, automated deployment
