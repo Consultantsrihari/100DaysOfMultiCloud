@@ -1,0 +1,51 @@
+# 🚀 100 Days of Multi-Cloud — Day 6 & Day 7 (Azure Compute Series)
+
+## 🟦 Day 6 — Azure Virtual Machine
+
+### 🔹 What is an Azure VM?
+A cloud-based virtual server hosted on Microsoft Azure. Acts like a physical server without hardware maintenance.
+
+**Key Features**:
+- Customizable (CPU, RAM, Disk)
+- Supports Linux/Windows
+- SSH/RDP access
+- Pay-as-you-go
+- Integrated networking/security
+
+**Use Cases**:
+Web hosting, APIs, dev/test, backend services, DB hosting
+
+### 🔹 Architecture
+
+  Internet → Public IP → Azure VM → Virtual Network + Subnet
+
+ ### 🔹 Hands-On: Launch a VM
+
+1. **Create Resource Group**  
+   `Azure Portal → Resource Groups → Create`  
+   Name: `day6-rg`, Region: `East US`
+
+2. **Create VM**  
+   `Azure Portal → Virtual Machines → Create`  
+   - Name: `day6-web-vm`, Image: `Ubuntu 22.04 LTS`, Size: `B1s`  
+   - Auth: SSH key, User: `azureuser`  
+   - VNet: `day6-vnet`, Subnet: `web-subnet`, Public IP: Enabled  
+   - Open Ports: 22 (SSH), 80 (HTTP)
+
+3. **SSH into VM**
+   ```bash
+   ssh azureuser@<public-ip> 
+
+
+- sudo apt update -y
+- sudo apt install nginx -y
+- echo "Day 6 Single VM - Manual Setup" | sudo tee /var/www/html/index.html
+- sudo systemctl start nginx
+- sudo systemctl enable nginx
+---
+
+Test:
+
+Visit http://<public-ip> in browser.
+
+---
